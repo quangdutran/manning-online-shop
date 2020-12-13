@@ -1,0 +1,1 @@
+https://dzone.com/articles/spring-data-jpa-auditing-automatically-the-good-stuff  -- Auditable entity + security

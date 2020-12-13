@@ -1,18 +1,23 @@
 package com.dutran.bakery.controller;
 
-import org.springframework.beans.factory.annotation.Value;
+import com.dutran.bakery.dto.ItemDTO;
+import com.dutran.bakery.service.ICatalogService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import java.util.List;
+
 @Controller
 public class HomeController {
-    @Value("${spring.application.name}")
-    String appName;
+    @Autowired
+    ICatalogService catalogService;
 
     @GetMapping("/")
     public String homePage(Model model) {
-        model.addAttribute("appName", appName);
+        List<ItemDTO> itemsForHomePage = catalogService.getItemsForHomeSite();
+        model.addAttribute("items", itemsForHomePage);
         return "index";
     }
 }
