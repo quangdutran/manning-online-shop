@@ -103,7 +103,7 @@
               <h4 class="card-title">
                 <a href="#" th:text="${item.name}">Item Name</a>
               </h4>
-              <h5 th:text="${item.price}">$0.0</h5>
+              <h5 th:text="${#numbers.formatCurrency(item.price)}"></h5>
               <p class="card-text" th:text="${item.description}">N/A</p>
             </div>
             <div class="card-footer">

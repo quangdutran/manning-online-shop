@@ -1,4 +1,4 @@
-package com.dutran.bakery.repository;
+package com.dutran.bakery.service;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
