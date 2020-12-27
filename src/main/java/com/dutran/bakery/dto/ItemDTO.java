@@ -10,11 +10,10 @@ import java.math.BigDecimal;
 
 @Data
 @Builder
-@NoArgsConstructor
-@AllArgsConstructor
 public class ItemDTO {
+    private Integer id;
     private String sku;
     private String name;
     private String description;
-    private String price;
+    private BigDecimal price;
 }

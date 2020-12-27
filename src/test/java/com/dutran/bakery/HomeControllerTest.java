@@ -81,7 +81,7 @@ public class HomeControllerTest {
     private void mockItems(String name, String description, BigDecimal price) {
         when(catalogService.getItemsForHomeSite()).thenReturn(Collections.singletonList(
                 ItemDTO.builder().name(name).description(description)
-                        .price(NumberFormat.getCurrencyInstance(new Locale(language, country)).format(price)).build()
+                        .price(price).build()
         ));
     }
 }

@@ -41,6 +41,7 @@ Initial phase
    :maxdepth: 2
    
    mainflow
+   tables
 
 .. Indices and tables
 .. ==================

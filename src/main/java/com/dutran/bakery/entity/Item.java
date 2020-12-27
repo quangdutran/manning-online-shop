@@ -1,22 +1,22 @@
 package com.dutran.bakery.entity;
 
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
 @javax.persistence.Entity
 @Table(name = "item")
 public class Item extends BaseEntity {
-    @Id
-    @GeneratedValue
     private int id;
+    @Id
+    @Column(unique = true)
     private String sku;
     @NotBlank
     private String name;
     private String description;
+    @NotNull
     private BigDecimal price;
 
     public Item(String sku, @NotBlank String name, String description, BigDecimal price) {
