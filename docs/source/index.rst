@@ -3,7 +3,7 @@ Online Store's documentation
 
 Overview
 --------
-This is an e-commerce web application for a small bakery focusing on high-quality bread and pastries with quick delivery to local residents.
+This is an e-commerce web application for a small online shop focusing on selling CDs with quick delivery to customers.
 The reason for building a e-commerce system is the focus on one-click payments.
 
 
@@ -25,8 +25,8 @@ Main tasks
 
 Project Outline
 ^^^^^^^^^^^^^^^
-Initial phase
-"""""""""""""
+Initial phase (Expected due date: end of Jan 2021)
+""""""""""""""""""""""""""""""""""""""""""""""""""
 1. Setting up the environment and starting the project
 2. Building the catalog
 3. Adding a “Basket” feature
