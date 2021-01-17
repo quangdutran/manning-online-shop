@@ -7,10 +7,15 @@ This is an e-commerce web application for a small online shop focusing on sellin
 The reason for building a e-commerce system is the focus on one-click payments.
 
 
-Approach
-^^^^^^^^
+Architecture
+^^^^^^^^^^^^
+.. image:: _static/architecture.png
 
-The aim is to start small, and then iterate step by step, having a fully functional and valuable product with every step.
+.. image:: _static/mainmodule.png
+
+Tables (TBD)
+^^^^^^^^^^^^
+.. image:: _static/db.png
 
 
 Main tasks
@@ -25,27 +30,42 @@ Main tasks
 
 Project Outline
 ^^^^^^^^^^^^^^^
-Initial phase (Expected due date: end of Jan 2021)
-""""""""""""""""""""""""""""""""""""""""""""""""""
-1. Setting up the environment and starting the project
-2. Building the catalog
-3. Adding a “Basket” feature
-4. User registration and login
-5. Login with Facebook
-6. Checkout with PayPal
-7. Packaging and deploying the application to Amazon Web Services
+.. list-table::
+   :widths: 30 10 10
+   :header-rows: 1
+
+   * - Milestone
+     - Due
+     - Status
+   * - Tech stack, project plan
+     - Jan 17 2021
+     - In progress
+   * - Create skeleton services
+     - Jan 31 2021
+     - In progress
+   * - Create Main module
+     - Feb 7 2021
+     - Not started
+   * - Authentication Module
+     - Feb 12 2021
+     - Not started 
+   * - Order payment module & queue messages
+     - Feb 21 2021
+     - Not started 
+   * - Front-end 
+     - TBD
+     - In progress
+   * - Login with Facebook, Oauth2, Keycloak
+     - TBD
+     - Not started
 
 
+.. image:: _static/progress.png
 
-.. toctree::
-   :maxdepth: 2
-   
-   mainflow
-   tables
 
-.. Indices and tables
-.. ==================
-
-.. * :ref:`genindex`
-.. * :ref:`modindex`
-.. * :ref:`search`
+References
+^^^^^^^^^^
+* https://www.amazon.com/Learn-Microservices-Spring-Boot-Practical/dp/1484231643
+* https://medium0.com/omarelgabrys-blog/microservices-with-spring-boot-intro-to-microservices-part-1-c0d24cd422c3
+* https://spring.io/blog/2015/07/14/microservices-with-spring
+* https://medium.com/dev-genius/liquibase-handling-database-in-spring-boot-dbdf237d2b3b
