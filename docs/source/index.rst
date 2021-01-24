@@ -13,6 +13,8 @@ Architecture
 
 .. image:: _static/mainmodule.png
 
+.. image:: _static/sequence.png
+
 Tables (TBD)
 ^^^^^^^^^^^^
 .. image:: _static/db.png
