@@ -11,26 +11,32 @@ Architecture
 ^^^^^^^^^^^^
 .. image:: _static/architecture.png
 
+Module components
+"""""""""""""""""
 .. image:: _static/mainmodule.png
 
+Async call handling checking out
+""""""""""""""""""""""""""""""""
 .. image:: _static/sequence.png
 
 Tables (TBD)
 ^^^^^^^^^^^^
-.. image:: _static/db.png
+
+Security will be implemented using Spring Security. Authorization is managed through Group and Permissions. Users and customers can be assigned one to multiple groups
+
+.. image:: _static/db/user_permission.png
+
+Product tables
+
+.. image:: _static/db/product.png
+
+.. image:: _static/db/cart_order.png
 
 
-Main tasks
-^^^^^^^^^^
-* Writing unit and integration tests using test-driven development
-* Using Java, Spring 5, and Spring Boot 2
-* Securing an application with Spring Security
-* Accessing relation data in PostgreSQL using Spring Data
-* Front-end development using Spring MVC, HTML, and CSS
-* DevOps: preparing and deploying an application using Docker
 
 
-Project Outline
+
+Tasks
 ^^^^^^^^^^^^^^^
 .. list-table::
    :widths: 30 10 10
