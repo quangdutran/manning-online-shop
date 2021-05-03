@@ -4,23 +4,6 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-#Ignore files
-*.class
-*.jar
-*.lst
-*/target/
-*.class
-*.idea/
-*.iml
-*/target/*
-.idea/workspace.xml
-*.class
-**/bin
-**/build
-**/.settings
-**/.classpath
-.mvnw/*.jar
-
 ### STS ###
 .apt_generated
 .classpath

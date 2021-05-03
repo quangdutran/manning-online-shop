@@ -1,0 +1,24 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet author="dutq" id="changelog-2.1">
+        <addColumn tableName="product_category">
+            <column name="category_code" type="varchar(10)" >
+                <constraints unique="true" nullable="true" uniqueConstraintName="category_code_unique"/>
+            </column>
+            <column name="parent_code" type="varchar(10)">
+                <constraints nullable="true"
+                             foreignKeyName="fk_product_category_code"
+                             references="product_category(category_code)"/>
+            </column>
+        </addColumn>
+        <rollback>
+            <dropColumn tableName="product_category" columnName="category_code"/>
+            <dropColumn tableName="product_category" columnName="parent_code"/>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>

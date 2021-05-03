@@ -1,0 +1,49 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet author="dutq" id="changelog-2.1">
+        <addColumn tableName="product_description">
+            <column name="free_shipping" type="boolean"/>
+            <column name="quantity" type="int"/>
+            <column name="quantity_order_max" type="int"/>
+            <column name="quantity_order_min" type="int" defaultValue="1"/>
+            <column name="status" type="varchar(20)"/>
+            <column name="price" type="decimal"/>
+            <column name="special_price" type="decimal"/>
+            <column name="special_start" type="datetime"/>
+            <column name="special_end" type="datetime"/>
+            <column name="publisher" type="varchar(100)"/>
+            <column name="format_type" type="varchar(50)"/>
+            <column name="country" type="varchar(50)"/>
+            <column name="style" type="varchar(50)"/>
+        </addColumn>
+        <createTable tableName="product_category">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(100)"></column>
+            <column name="description" type="varchar(255)"/>
+            <column name="image_url" type="varchar(255)"/>
+            <column name="image_public_id" type="varchar(50)"/>
+            <column name="parent_id" type="bigint"/>
+        </createTable>
+        <addColumn tableName="products">
+            <column name="category_id" type="bigint">
+                <constraints nullable="true"
+                             foreignKeyName="fk_product_category"
+                             references="product_category(id)"/>
+            </column>
+        </addColumn>
+        <rollback>
+            <dropTable tableName="product_description"/>
+            <dropTable tableName="product_category"/>
+            <dropColumn tableName="products">
+                <column name="category_id" type="bigint"/>
+            </dropColumn>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>
