@@ -5,34 +5,43 @@
       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
     <changeSet author="dutq" id="changelog-1.0">
-        <createTable tableName="user">
+        <createTable tableName="manufacturers">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
-            <column name="active" type="bit">
-            </column>
-            <column name="email" type="varchar(50)">
-                <constraints nullable="false"/>
-            </column>
-            <column name="first_name" type="varchar(255)"/>
-            <column name="last_name" type="varchar(255)"/>
-            <column name="date_created" type="datetime"/>
-            <column name="date_modified" type="datetime"/>
-            <column name="update_id" type="varchar(100)"/>
-            <column name="provider_id" type="varchar(50)"/>
-            <column name="access_token" type="varchar(50)"/>
-            <column name="display_name" type="varchar(50)"/>
-            <column name="image_url" type="varchar(100)"/>
+            <column name="name" type="varchar(255)"/>
+            <column name="description" type="text"/>
+            <column name="url" type="varchar(255)"/>
+            <column name="code" type="varchar(255)"/>
+            <column name="image" type="varchar(255)"/>
         </createTable>
-        <createTable tableName="order">
-            <column name="id" type="int" autoIncrement="true">
+        <createTable tableName="product_description">
+            <column name="id" type="bigint" autoIncrement="true">
                 <constraints nullable="false" primaryKey="true"/>
             </column>
-            <column name="desc" type="varchar(10)"/>
+            <column name="product_id" type="bigint"/>
+            <column name="name" type="varchar(255)"/>
+            <column name="description" type="text"/>
+            <column name="meta_desc" type="varchar(255)"/>
+            <column name="keywords" type="varchar(255)"/>
+            <column name="link" type="varchar(255)"/>
+        </createTable>
+        <createTable tableName="products">
+            <column name="id" type="varchar(100)">
+                <constraints nullable="false" primaryKey="true" unique="true"/>
+            </column>
+            <column name="sku" type="varchar(100)"/>
+            <column name="available" type="boolean"/>
+            <column name="date_available" type="datetime"/>
+            <column name="pre_order" type="boolean"/>
+            <column name="quantity_ordered" type="int"/>
+            <column name="manufacturer_id" type="bigint"/>
+            <column name="description_id" type="bigint"/>
         </createTable>
         <rollback>
-            <dropTable tableName="user"/>
-            <dropTable tableName="order"/>
+            <dropTable tableName="manufacturer"/>
+            <dropTable tableName="product_description"/>
+            <dropTable tableName="product"/>
         </rollback>
     </changeSet>
 

@@ -21,6 +21,9 @@
 	<module>service2</module>
 	<module>mainModule</module>
 	<module>coreModel</module>
+    <module>productService</module>
+    <module>cloudinaryService</module>
+    <module>configServer</module>
   </modules>
 
  

@@ -1,0 +1,39 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet author="dutq" id="changelog-2.0">
+        <createTable tableName="photos">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="default_photo" type="boolean"/>
+            <column name="type" type="int"/>
+            <column name="url" type="varchar(255)"/>
+            <column name="name" type="varchar(100)"/>
+            <column name="description" type="varchar(255)"/>
+            <column name="alt_tag" type="varchar(100)"/>
+            <column name="cloudinary_public_id" type="varchar(50)"/>
+            <column name="cloudinary_etag" type="varchar(100)"/>
+        </createTable>
+        <createTable tableName="product_photos">
+            <column name="product_id" type="varchar(36)">
+                <constraints nullable="false"
+                             foreignKeyName="fk_photo_product"
+                             references="products(id)"/>
+            </column>
+            <column name="photo_id" type="bigint">
+                <constraints nullable="false"
+                             foreignKeyName="fk_product_photo"
+                             references="photos(id)"/>
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable tableName="photos"/>
+            <dropTable tableName="product_photos"/>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>

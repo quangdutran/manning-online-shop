@@ -1,0 +1,36 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet author="dutq" id="changelog-1.1">
+        <addColumn tableName="manufacturers">
+            <column name="created_datetime" type="datetime"/>
+            <column name="modified_datetime" type="datetime"/>
+        </addColumn>
+        <addColumn tableName="products">
+            <column name="created_datetime" type="datetime"/>
+            <column name="modified_datetime" type="datetime"/>
+        </addColumn>
+        <addColumn tableName="product_description">
+            <column name="created_datetime" type="datetime"/>
+            <column name="modified_datetime" type="datetime"/>
+        </addColumn>
+        <rollback>
+            <dropColumn tableName="manufacturers">
+                <column name="created_datetime" type="datetime"/>
+                <column name="modified_datetime" type="datetime"/>
+            </dropColumn>
+            <dropColumn tableName="products">
+                <column name="created_datetime" type="datetime"/>
+                <column name="modified_datetime" type="datetime"/>
+            </dropColumn>
+            <dropColumn tableName="product_description">
+                <column name="created_datetime" type="datetime"/>
+                <column name="modified_datetime" type="datetime"/>
+            </dropColumn>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>
